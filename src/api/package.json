@@ -1,6 +1,6 @@
 {
-  "name": "pictogrify",
-  "version": "0.0.5",
+  "name": "pictogrify-api",
+  "version": "0.1.1",
   "description": "Generate unique pictograms from any text",
   "main": "dist/pictogrify.js",
   "browser": "dist/pictogrify.js",
@@ -10,9 +10,6 @@
     "build": "webpack",
     "build:prod": "NODE_ENV=production webpack -p"
   },
-  "pre-commit": [
-    "build:prod"
-  ],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/luciorubeens/pictogrify.git"
@@ -31,6 +28,8 @@
   },
   "homepage": "https://github.com/luciorubeens/pictogrify#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
     "lodash": "^4.17.15",
     "string-hash": "^1.1.3",
     "xmldoc": "^1.1.2"

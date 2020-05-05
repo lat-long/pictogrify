@@ -1,4 +1,4 @@
-const colors = require('../../config/colors.json')
+const colors = require('./colors.json')
 
 module.exports = {
   'name': 'Male Flat',

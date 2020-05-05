@@ -1,4 +1,4 @@
-const themes = require('../themes')
+const themes = require('../src/themes')
 
 module.exports = {
   'defaultTheme': 'male-flat',
