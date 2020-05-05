@@ -11,11 +11,10 @@ var appRouter = function (app) {
         const Pictogrify = require('./dist/pictogrify.js');
 
         const avatar = new Pictogrify(string, theme);
-        console.log(avatar.svg);
-        //console.log(avatar.keys());
+
         var returnData = ({
             originatingString: req.params.string,
-            data: avatar.shapes
+            svg: avatar.svg
         });
         
         res.status(200).send(returnData);

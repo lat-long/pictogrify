@@ -11,7 +11,7 @@ module.exports = class Pictogrify {
   }
 
   get svg () {
-    return Pictogrify.template(this.prop)
+    return Pictogrify.template(this.prop,'inline')
   }
 
   get base64 () {
@@ -59,7 +59,7 @@ module.exports = class Pictogrify {
 
   static include (prop, part, index, mode) {
     const fillable = prop.fill[part] ? `fill="${prop.fill[part]}"` : ''
-
+    
     if (mode === 'use') {
       return `<use class="${part}" ${fillable} href="${location.origin}${spriteDist.url}${prop.theme}.svg#${part}-${(index)}" />`
     }
@@ -72,5 +72,5 @@ module.exports = class Pictogrify {
         ${svg}
         </svg>`
     }
-  }
+  }  
 }

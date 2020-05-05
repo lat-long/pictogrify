@@ -158,7 +158,7 @@ const build = {
       }
     ]
   },
-
+  target: "node",
   plugins: loadPlugins()
 }
 

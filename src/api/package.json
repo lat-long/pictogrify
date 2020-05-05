@@ -3,7 +3,11 @@
   "version": "0.1.1",
   "description": "Generate unique pictograms from any text",
   "main": "dist/pictogrify.js",
-  "browser": "dist/pictogrify.js",
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  },
   "module": "src/app/pictogram.js",
   "scripts": {
     "start": "webpack-dev-server",
