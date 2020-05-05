@@ -31,29 +31,31 @@
   },
   "homepage": "https://github.com/luciorubeens/pictogrify#readme",
   "dependencies": {
-    "lodash": "^4.17.5",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
     "string-hash": "^1.1.3",
-    "xmldoc": "^1.1.0"
+    "xmldoc": "^1.1.2"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.2",
-    "babel-loader": "^7.1.2",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^7.1.5",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "clean-webpack-plugin": "^0.1.18",
     "eslint": "^4.18.1",
-    "eslint-loader": "^2.0.0",
+    "eslint-loader": "^2.2.1",
     "imports-loader": "^0.7.1",
     "pre-commit": "^1.2.2",
     "string-replace-webpack-plugin": "^0.1.3",
-    "svg-sprite-loader": "^3.6.2",
-    "svgo": "^1.0.4",
-    "svgo-loader": "^2.1.0",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.11.1"
+    "svg-sprite-loader": "^3.9.2",
+    "svgo": "^1.3.2",
+    "svgo-loader": "^2.2.1",
+    "webpack": "^3.12.0",
+    "webpack-dev-server": "^2.11.5"
   }
 }

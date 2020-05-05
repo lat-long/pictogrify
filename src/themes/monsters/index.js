@@ -16,7 +16,7 @@ module.exports = {
       'currentColor': '#3776fd'
     },
     'eye': {
-      'length': 9,
+      'length': 8,
     },
     'horn': {
       'length': 9,
