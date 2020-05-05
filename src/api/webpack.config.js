@@ -1,6 +1,6 @@
 const webpack = require('webpack')
 const path = require('path')
-const config = require('./src/config')
+const config = require('./src/themes')
 const _ = require('lodash')
 
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
@@ -12,9 +12,9 @@ const __DEV__ = process.env.NODE_ENV === 'development'
 const __PROD__ = process.env.NODE_ENV === 'production'
 
 const paths = {
-  source: path.resolve(__dirname, './src'),
+  //source: path.resolve(__dirname, './src'),
   dist: path.resolve(__dirname, './dist'),
-  assets: path.resolve(__dirname, './assets'),
+  assets: path.resolve(__dirname, './src/assets'),
   app: path.resolve(__dirname, './src/app/pictogram.js'),
   spritePrefix: 'sprite-'
 }
@@ -44,6 +44,8 @@ function loadPlugins () {
           compilation.plugin('optimize-chunk-assets', (chunks, callback) => {
             const { assets } = compilation
             const spriteAssets = _.pickBy(assets, (value, key) => key.startsWith('sprite-'))
+            if (_.isEmpty(spriteAssets))
+                console.log(spriteAssets);
             if (_.isEmpty(spriteAssets) || _.isNil(spriteAssets)) throw new Error('Sprites are not compiled!')
 
             const spriteSources = _.transform(spriteAssets, (result, value, key) => result[key.replace(/(sprite-|.svg)/g, '')] = value.source())
@@ -111,6 +113,7 @@ const build = {
               spriteFilename: svgPath => {
                 const tree = path.dirname(svgPath).split(path.sep)
                 const theme = tree[_.indexOf(tree, 'themes') + 1]
+                console.log('HERE');
                 return `${paths.spritePrefix}${theme}.svg`
               }
             }
