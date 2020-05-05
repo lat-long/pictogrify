@@ -49,7 +49,7 @@ module.exports = class Pictogrify {
     }
 
     return `
-      <svg viewBox="0 0 ${prop.width} ${prop.height}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <svg viewBox="0 0 ${prop.width} ${prop.height}" xmlns="http://www.w3.org/2000/svg">
         <g>
           <rect fill="${prop.colors.background}" x="0" y="0" width="${prop.width}" height="${prop.height}"></rect>
           ${includes.join('\n')}
@@ -61,7 +61,7 @@ module.exports = class Pictogrify {
     const fillable = prop.fill[part] ? `fill="${prop.fill[part]}"` : ''
 
     if (mode === 'use') {
-      return `<use class="${part}" ${fillable} xlink:href="${location.origin}${spriteDist.url}${prop.theme}.svg#${part}-${(index)}" />`
+      return `<use class="${part}" ${fillable} href="${location.origin}${spriteDist.url}${prop.theme}.svg#${part}-${(index)}" />`
     }
 
     if (mode === 'inline') {

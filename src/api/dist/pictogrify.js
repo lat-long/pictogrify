@@ -5343,8 +5343,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   /*** IMPORTS FROM imports-loader ***/
   var __SPRITE_DIST__ = { url: "/dist/sprite-" };
 
-  // fs = require('fs');
-
   var req = __webpack_require__(46);
   req.keys().forEach(req);
 
@@ -5392,7 +5390,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       key: 'base64',
       get: function get() {
         var data = Pictogrify.template(this.prop, 'inline');
-        return 'data:image/svg+xml;base64,' + btoa(data);
+        return 'data:image/svg+xml;base64,' + window.btoa(data);
       }
     }], [{
       key: 'template',
@@ -5426,18 +5424,15 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           }
         }
 
-        return '\n      <svg viewBox="0 0 ' + prop.width + ' ' + prop.height + '"  xmlns="http://www.w3.org/2000/svg">\n        <g>\n          <rect fill="' + prop.colors.background + '" x="0" y="0" width="' + prop.width + '" height="' + prop.height + '"></rect>\n          ' + includes.join('\n') + '\n        </g>\n      </svg>';
+        return '\n      <svg viewBox="0 0 ' + prop.width + ' ' + prop.height + '" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\n        <g>\n          <rect fill="' + prop.colors.background + '" x="0" y="0" width="' + prop.width + '" height="' + prop.height + '"></rect>\n          ' + includes.join('\n') + '\n        </g>\n      </svg>';
       }
     }, {
       key: 'include',
       value: function include(prop, part, index, mode) {
         var fillable = prop.fill[part] ? 'fill="' + prop.fill[part] + '"' : '';
-        console.log(spriteDist);
-        console.log("./${spriteDist.url}${prop.theme}");
-        // console.log( fs.readFile("./${spriteDist.url}${prop.theme}"));
-        console.log(index);
+
         if (mode === 'use') {
-          return '<use class="' + part + '" ' + fillable + ' href="' + spriteDist.url + prop.theme + '.svg#' + part + '-' + index + '" />';
+          return '<use class="' + part + '" ' + fillable + ' xlink:href="' + location.origin + spriteDist.url + prop.theme + '.svg#' + part + '-' + index + '" />';
         }
 
         if (mode === 'inline') {
