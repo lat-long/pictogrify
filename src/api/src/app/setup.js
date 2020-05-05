@@ -1,15 +1,13 @@
-const config = require('../config')
+const config = require('../config.js')
 const hash = require('string-hash')
 const xmldoc =  require('xmldoc')
 const _ = require('lodash')
 
-const themes = require('./themes');
-
 const spriteSources = __SPRITE_SOURCES__ // eslint-disable-line no-undef
 const spriteXml = _.transform(spriteSources, (result, value, key) => result[key] = new xmldoc.XmlDocument(value).firstChild, {})
-console.log(string);
+
 module.exports = (text, theme = config.defaultTheme) => {
-  const options = themes[theme]
+  const options = config.themes[theme]
   const uid = ('' + hash(text)).replace(/0/g, '1').split('')
   const viewBox = options.viewBox.split(' ')
   const width = viewBox[2]

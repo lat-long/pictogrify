@@ -8,16 +8,17 @@ var appRouter = function (app) {
         var theme = req.params.theme || "monsters";
         const string = req.params.string || "Forgot Your String, Yo";
 
-        var data = ({
-            image: "https://google.com",
-            originatingString: req.params.string
+        const Pictogrify = require('./dist/pictogrify.js');
+
+        const avatar = new Pictogrify(string, theme);
+        console.log(avatar.svg);
+        //console.log(avatar.keys());
+        var returnData = ({
+            originatingString: req.params.string,
+            data: avatar.shapes
         });
-
-        const pict = require('./src/pictogram.js');
-
-        console.log(new Pictogrify(string, theme));
-
-        res.status(200).send(data);
+        
+        res.status(200).send(returnData);
         
     });
 }

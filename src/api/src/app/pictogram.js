@@ -8,9 +8,7 @@ const spriteDist = __SPRITE_DIST__ // eslint-disable-line no-undef
 module.exports = class Pictogrify {
   constructor (text, theme) {
     this.prop = setup(text, theme)
-    console.log(theme);
   }
-  
 
   get svg () {
     return Pictogrify.template(this.prop)
