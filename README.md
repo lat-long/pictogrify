@@ -58,6 +58,14 @@ new Pictogrify('my text').render(document.querySelector('.pictogram'))
 </script>
 ```
 
+## TODOs
+
+* [ ] Move `app` and `api` our of `/src` into project root
+* [ ] Test library for in-browser usage
+* [ ] Add API param support to specify which theme to use per-request
+* [ ] Refactor core library a bit
+* [ ] Add deployment pipelines to public demo
+
 ## Contributing
 
 The "api" is totally customizable, so you can contribute with a design pack for what you want, people, monsters, animals, houses..
