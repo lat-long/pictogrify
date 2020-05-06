@@ -19,5 +19,5 @@ const queryAvatar = document.querySelector('.avatar-query')
 queryInput.addEventListener('keyup', function (e) {
   const theme = queryAvatar.getAttribute('data-theme')
   const value = queryInput.value && queryInput.value.length > 0 ? queryInput.value : 'pictogram'
-  new Pictogrify(value, theme).render(queryAvatar)
+  //new Pictogrify(value, theme).render(queryAvatar)
 })
