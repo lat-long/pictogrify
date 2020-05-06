@@ -1,3 +1,5 @@
+const apiURL = 'http://localhost:3000';
+
 // Randomize the jumbotron background
 const gradients = ['bg-1', 'bg-2', 'bg-3', 'bg-4']
 const randomGradient = Math.floor(Math.random() * gradients.length) + 1
@@ -33,7 +35,7 @@ function fetchAvatar(query,element,theme="monsters"){
     };
     xhttp.open(
         "GET",
-        'http://localhost:3000/image/'+query,
+        apiURL+'/image/'+query,
         true
     );
     xhttp.send();

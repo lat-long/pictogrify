@@ -14,6 +14,14 @@
 <div class="pictogram"></div>
 ```
 
+### API 
+* Set port number in `.env`
+* Start server with `npm start`
+
+## Webapp
+* Update `apiURL` variable in `/serc/app/assets/scripts/demoSite.js` to match port specified for API
+* Start webapp by running `npm start` in project root
+
 ## Usage
 
 ```javascript

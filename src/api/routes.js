@@ -5,7 +5,9 @@ var appRouter = function (app) {
 
     app.get("/image/:string", function (req, res) {
 
-        var theme = req.params.theme || "monsters";
+        //this param is not actually passed into the Pictogrify library. #TODO: allow for setting theme with this param
+        var theme = req.params.theme || "monsters";  
+
         const string = req.params.string || "Forgot Your String, Yo";
 
         const Pictogrify = require('./dist/pictogrify.js');
