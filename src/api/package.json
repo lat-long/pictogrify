@@ -10,7 +10,7 @@
   },
   "module": "src/app/pictogram.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "node app.js",
     "build": "webpack",
     "build:prod": "NODE_ENV=production webpack -p"
   },
@@ -34,6 +34,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "lodash": "^4.17.15",
     "string-hash": "^1.1.3",

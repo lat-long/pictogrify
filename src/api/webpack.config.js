@@ -90,7 +90,6 @@ const build = {
   },
 
   devServer: {
-    open: true,
   },
 
   resolve: {
