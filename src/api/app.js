@@ -1,4 +1,5 @@
 var express = require("express");
+var cors = require('cors');
 var bodyParser = require("body-parser");
 var routes = require("./routes.js");
 var app = express();
@@ -6,6 +7,9 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(cors());
+
+  
 routes(app);
 
 var server = app.listen(3000, function () {
