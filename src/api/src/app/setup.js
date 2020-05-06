@@ -1,4 +1,4 @@
-const config = require('../config')
+const config = require('../config.js')
 const hash = require('string-hash')
 const xmldoc =  require('xmldoc')
 const _ = require('lodash')

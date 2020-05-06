@@ -1,6 +1,6 @@
 const webpack = require('webpack')
 const path = require('path')
-const config = require('./src/config')
+const config = require('./src/config.js')
 const _ = require('lodash')
 
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
@@ -14,7 +14,6 @@ const __PROD__ = process.env.NODE_ENV === 'production'
 const paths = {
   source: path.resolve(__dirname, './src'),
   dist: path.resolve(__dirname, './dist'),
-  assets: path.resolve(__dirname, './assets'),
   app: path.resolve(__dirname, './src/app/pictogram.js'),
   spritePrefix: 'sprite-'
 }
@@ -91,7 +90,6 @@ const build = {
   },
 
   devServer: {
-    open: true,
   },
 
   resolve: {
@@ -159,7 +157,7 @@ const build = {
       }
     ]
   },
-
+  target: "node",
   plugins: loadPlugins()
 }
 
